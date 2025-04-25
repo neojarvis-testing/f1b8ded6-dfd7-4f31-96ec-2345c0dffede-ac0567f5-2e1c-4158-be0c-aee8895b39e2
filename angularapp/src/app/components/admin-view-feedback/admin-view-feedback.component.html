@@ -1,1 +1,58 @@
-<p>admin-view-feedback works!</p>
+<div class="background-container">
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+    <div class="container">
+    <h2>Feedback Details</h2>
+    <div *ngIf="feedbacks.length === 0">
+      No data found
+    </div>
+    <div *ngIf="feedbacks.length > 0">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>User Name</th>
+            <th>Feedback</th>
+            <th>Posted Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let feedback of paginatedFeedbacks; let i = index">
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>{{ feedback.User.Username }}</td>
+            <td>{{ feedback.FeedbackText }}</td>
+            <td>{{ feedback.Date | date: 'mediumDate' }}</td>
+            <td>
+              <button (click)="showProfile(feedback)">Show Profile</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+  
+    <div class="pagination-controls" *ngIf="feedbacks.length > itemsPerPage">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+      <span> Page {{ currentPage }} of {{ getTotalPages() }} </span>
+      <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= feedbacks.length">Next</button>
+    </div>
+  
+    <div *ngIf="showProfileModal" class="modal">
+      <div class="modal-content">
+        <h3>User Profile</h3>
+        <p><strong>Email:</strong> {{ selectedFeedback?.User.Email }}</p>
+        <p><strong>Username:</strong> {{ selectedFeedback?.User.Username }}</p>
+        <p><strong>Mobile Number:</strong> {{ selectedFeedback?.User.MobileNumber }}</p>
+        <button (click)="closeProfileModal()">Close</button>
+      </div>
+    </div>
+  
+    <div *ngIf="showLogoutModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to logout?</p>
+        <button (click)="logout()">Yes, Logout</button>
+        <button (click)="closeLogoutModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
