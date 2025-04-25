@@ -3,12 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 
-@NgModule({
-  declarations: [
-    AppComponent
-=======
 import { AdminAddAnnouncementComponent } from './components/admin-add-announcement/admin-add-announcement.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminViewAnnouncementComponent } from './components/admin-view-announcement/admin-view-announcement.component';
@@ -45,7 +40,7 @@ import { UserViewFeedbackComponent } from './components/user-view-feedback/user-
     UserViewAnnouncementComponent,
     UserViewBlogComponent,
     UserViewFeedbackComponent
->>>>>>> 86d5defb7bc5d720ea5c88dd77f375d99a80be28
+
   ],
   imports: [
     BrowserModule,
