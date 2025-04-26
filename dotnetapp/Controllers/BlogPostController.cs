@@ -104,7 +104,7 @@ namespace dotnetapp.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
-                //GAGAN
+                
             }
         }
 
