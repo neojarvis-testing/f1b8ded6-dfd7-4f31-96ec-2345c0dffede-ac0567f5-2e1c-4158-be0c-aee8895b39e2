@@ -20,6 +20,7 @@ import { UserNavbarComponent } from './components/user-navbar/user-navbar.compon
 import { UserViewAnnouncementComponent } from './components/user-view-announcement/user-view-announcement.component';
 import { UserViewBlogComponent } from './components/user-view-blog/user-view-blog.component';
 import { UserViewFeedbackComponent } from './components/user-view-feedback/user-view-feedback.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { UserViewFeedbackComponent } from './components/user-view-feedback/user-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

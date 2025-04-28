@@ -1,1 +1,35 @@
-<h1 class="title">Blog Posts</h1>
+<div class="background-container">
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+    <div class="container">
+      <h2>Blog Posts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blog of paginatedBlogPosts; let i = index">
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>{{ blog.Title }}</td>
+            <td>{{ blog.Content }}</td>
+            <td>{{ blog.Status }}</td>
+            <td>
+              <button class="approve" (click)="statusApproved(blog)" [disabled]="blog.Status === 'Approved'">Approve</button>
+              <button class="reject" (click)="statusRejected(blog)" [disabled]="blog.Status === 'Rejected'">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button *ngFor="let page of [].constructor(totalPages); let i = index" (click)="changePage(i + 1)">
+          {{ i + 1 }}
+        </button>
+      </div>
+    </div>
+  </div>
+  
