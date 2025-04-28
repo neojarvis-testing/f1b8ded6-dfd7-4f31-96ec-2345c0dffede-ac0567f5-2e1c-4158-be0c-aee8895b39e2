@@ -1,1 +1,23 @@
-<h1>BlogPortal</h1>
+
+<nav>
+    <h1>BlogPortal</h1>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links" [class.active]="showMenu">
+      <li class="item"><a class="linktext" routerLink="/home" data-text="Home">Home</a></li>
+      <li class="item"><a class="linktext" routerLink="/register" data-text="Register">Register</a></li>
+      <li class="item"><a class="linktext" routerLink="/login" data-text="Login">Login</a></li>
+      <li class="item"><a class="linktext" routerLink="/faq" data-text="FAQ">FAQ</a></li>
+    </ul>
+  </nav>
+  
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+      document.querySelector('.hamburger-menu').classList.toggle('active');
+    }
+  </script>
+  
