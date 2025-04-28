@@ -1,1 +1,48 @@
-<p>admin-add-announcement works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Announcement</title>
+  <link rel="stylesheet" href="admin-add-announcement.component.css">
+</head>
+<body>
+  <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+  <div class="form-container">
+    <h2>{{ isEditMode ? 'Edit Announcement' : 'Add New Announcement' }}</h2>
+    <form #announcementForm="ngForm" (ngSubmit)="onSubmit(announcementForm)">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="Title" [(ngModel)]="announcement.Title" placeholder="Enter the Title" required />
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <input type="text" name="Content" [(ngModel)]="announcement.Content" placeholder="Enter the Content" required />
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <input type="text" name="Category" [(ngModel)]="announcement.Category" placeholder="Enter the Category" required />
+      </div>
+      <div class="form-group">
+        <label>Priority</label>
+        <select name="Priority" [(ngModel)]="announcement.Priority" required>
+          <option value="" disabled selected>Select Priority</option>
+          <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select name="Status" [(ngModel)]="announcement.Status" required>
+          <option value="" disabled selected>Select Status</option>
+          <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+      </div>
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+  }
+   
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+   
+  .navbar-header {
+    display: flex;
+    align-items: center;
+  }
+   
+  .brand-logo {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 2.5rem;
+    margin-left: 20px;
+  }
+   
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+   
+  .nav-links a,
+  .logout-button {
+    color: white;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+   
+  .nav-links a:hover,
+  .logout-button:hover {
+    color: black;
+    background-color: #f0f0f0;
+  }
+   
+  .admin-info span {
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+   
+  /* Dropdown Styling */
+  .dropdown {
+    position: relative;
+  }
+   
+  .dropdown-toggle {
+    cursor: pointer;
+  }
+   
+  .dropdown-toggle::after {
+    content: " ▼";
+    font-size: 12px;
+    color: #333;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+   
+  .arrow-icon {
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+  }
+   
+  .dropdown:hover .arrow-icon {
+    transform: rotate(180deg);
+  }
+   
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+   
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+   
+  .dropdown-menu li {
+    padding: 0;
+    margin: 0;
+  }
+   
+  .dropdown-menu a {
+    color: white;
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+   
+  .dropdown-menu a:hover {
+    background-color: #777;
+  }
+   
+  /* Logout Button Styling */
+  .logout-button {
+    background-color: white;
+    color: red;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: -10px;
+  }
+   
+  .logout-button:hover {
+    background-color: #f0f0f0;
+    color: darkred;
+  }
+   
+  /* Hamburger Menu Styling */
+  .hamburger-menu {
+    display: none; /* Hidden on desktops */
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+   
+  .hamburger-menu div {
+    background-color: #ecf0f1;
+    height: 3px;
+    margin: 5px 0;
+    width: 25px;
+    transition: all 0.3s ease;
+  }
+   
+  /* When hamburger menu is active, animate into an "X" */
+  .hamburger-menu.active div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-menu.active div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+   
+  /* Modal Styling */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+   
+  .modal-content {
+    background:black;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px white;
+    text-align: center;
+    font-size: 20px;
+  }
+   
+  .modal-content button {
+    margin: 0 10px;
+    width: 120px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+  }
+   
+  .yes-logout-button {
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+   
+  .yes-logout-button:hover {
+    background-color: darkred;
+  }
+  
+  .profile-section {
+    cursor: pointer;
+  }
+  
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  .profile-card {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 220px;
+    text-align: left;
+  }
+  
+  .profile-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .profile-card p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+  }
+   
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    /* Hide nav-links by default on mobile */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 70px; /* Adjust this value if needed */
+      right: 0;
+      width: 100%;
+      padding: 1rem 0;
+      border-radius: 0 0 10px 10px;
+      z-index: 999;
+    }
+   
+    /* When active, show the menu */
+    .nav-links.active {
+      display: flex;
+    }
+   
+    .hamburger-menu {
+      display: flex;
+    }
+   
+    /* Optionally hide admin-info on mobile to simplify layout */
+    .admin-info {
+      display: none;
+    }
+   
+    .nav-links li {
+      margin: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+   
+  
