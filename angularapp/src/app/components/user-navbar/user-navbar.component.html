@@ -1,1 +1,74 @@
-<p>user-navbar works!</p>
+<nav class="navbar">
+    <div class="navbar-header">
+      <span class="navbar-brand">
+        <p class="brand-logo">BlogPortal</p>
+      </span>
+    </div>
+   
+    <!-- Hamburger Menu (visible on mobile) -->
+    <div class="hamburger-menu" (click)="toggleMenu()" [ngClass]="{'active': showMenu}">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+   
+    <!-- Navigation Links -->
+    <ul class="nav-links" [class.active]="showMenu">
+      <li class="user-info" (click)="closeMenu()">
+        <span>Hello, {{ Username }}!</span>
+      </li>
+      <li (click)="closeMenu()"><a routerLink="/home">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" (click)="toggleDropdown($event)">Announcements <i class="fas fa-chevron-down arrow-icon"></i></a>
+        <ul class="dropdown-menu">
+          <li (click)="closeMenu()"><a routerLink="/userviewannouncement">View Announcements</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" (click)="toggleDropdown($event)">Blogs <i class="fas fa-chevron-down arrow-icon"></i></a>
+        <ul class="dropdown-menu">
+          <li (click)="closeMenu()"><a routerLink="/useraddblog">Create Blog</a></li>
+          <li (click)="closeMenu()"><a routerLink="/userviewblog">View Blogs</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" href="#" (click)="toggleDropdown($event)">Feedback <i class="fas fa-chevron-down arrow-icon"></i></a>
+        <ul class="dropdown-menu">
+          <li (click)="closeMenu()"><a routerLink="/useraddfeedback">Create Feedback</a></li>
+          <li (click)="closeMenu()"><a routerLink="/userviewfeedback">View Feedback</a></li>
+        </ul>
+      </li>
+      <li (click)="closeMenu()">
+        <button class="logout-button" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+  
+    <!-- User Profile Section (Hover-based) -->
+  <div class="profile-section" 
+  (mouseenter)="showProfileDropdown = true" 
+  (mouseleave)="showProfileDropdown = false"
+  (click)="profileClick()">
+  <img src="assets/profile_icon.png" alt="Profile" class="profile-pic">
+  
+  <!-- Profile Dropdown -->
+  <div class="profile-dropdown" *ngIf="showProfileDropdown">
+  <div class="profile-card">
+    <h4>BlogPost Account</h4>
+    <p>{{ userProfile.Username }}</p>
+    <p>Email: {{ userProfile.Email }}</p>
+    <p>Mobile: {{ userProfile.MobileNumber }}</p>
+    <p>Role: {{ userProfile.UserRole }}</p>
+  </div>
+  </div>
+  </div>
+   
+    <!-- Logout Confirmation Modal -->
+    <div *ngIf="showLogoutModel" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to log out?</p> <!-- Fixed logout confirmation message -->
+        <br>
+        <button class="yes-logout-button" (click)="confirmLogout()">Yes, Logout</button>
+        <button (click)="cancelLogout()">Cancel</button>
+      </div>
+    </div>
+  </nav>
