@@ -33,20 +33,20 @@ namespace dotnetapp.Services
  
         public async Task<bool> UpdateAnnouncement(int announcementId, Announcement announcement)
         {
-            // var existingAnnouncement = await _context.Announcements.FindAsync(announcementId);
-            // if (existingAnnouncement == null)
-            // {
-            //     return false;
-            // }
+            var existingAnnouncement = await _context.Announcements.FindAsync(announcementId);
+            if (existingAnnouncement == null)
+            {
+                return false;
+            }
  
-            // existingAnnouncement.Title = announcement.Title;
-            // existingAnnouncement.Content = announcement.Content;
-            // existingAnnouncement.PublishedDate = announcement.PublishedDate;
-            // existingAnnouncement.Category = announcement.Category;
-            // existingAnnouncement.Priority = announcement.Priority;
-            // existingAnnouncement.Status = announcement.Status;
+            existingAnnouncement.Title = announcement.Title;
+            existingAnnouncement.Content = announcement.Content;
+            existingAnnouncement.PublishedDate = announcement.PublishedDate;
+            existingAnnouncement.Category = announcement.Category;
+            existingAnnouncement.Priority = announcement.Priority;
+            existingAnnouncement.Status = announcement.Status;
  
-            // await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
              return true;
         }
  
