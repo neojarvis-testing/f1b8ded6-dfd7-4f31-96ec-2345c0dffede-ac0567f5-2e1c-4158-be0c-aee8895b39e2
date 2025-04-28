@@ -1,1 +1,59 @@
-<p>user-add-blog works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="user-add-blog.component.css">
+</head>
+<body>
+  <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+  <div class="container">
+    <h2>{{ isEditMode ? 'Edit Blog Post' : 'Add New Blog Post' }}</h2>
+
+    <form #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          id="title"
+          name="Title"
+          [(ngModel)]="blogPost.Title"
+          #title="ngModel"
+          required
+          class="form-control title-box"
+          type="text"
+        />
+        <div class="error" *ngIf="submitted && title.invalid">
+          Title is required.
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea
+          id="content"
+          name="Content"
+          [(ngModel)]="blogPost.Content"
+          #content="ngModel"
+          required
+          class="form-control content-box"
+          rows="5"
+        ></textarea>
+        <div class="error" *ngIf="submitted && content.invalid">
+          Content is required.
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">
+        {{ isEditMode ? 'Update' : 'Submit' }}
+      </button>
+    </form>
+  </div>
+</body>
+</html>

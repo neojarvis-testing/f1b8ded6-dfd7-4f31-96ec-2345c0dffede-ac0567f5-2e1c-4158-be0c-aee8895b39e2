@@ -23,7 +23,9 @@ import { UserViewFeedbackComponent } from './components/user-view-feedback/user-
 import { FormsModule } from '@angular/forms';
 
 
+
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -48,9 +50,6 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-
-    AppRoutingModule,FormsModule
-
     AppRoutingModule,
     FormsModule,
     HttpClientModule
