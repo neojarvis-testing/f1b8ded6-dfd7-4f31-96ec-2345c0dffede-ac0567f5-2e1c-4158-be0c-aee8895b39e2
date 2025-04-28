@@ -1,0 +1,133 @@
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -2;
+  }  
+  
+  .featured-post {
+    position: relative;
+    text-align: center;
+    background-color: #f4f4f4; 
+  
+  }
+  
+  .featured-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+   .image-item {
+    
+    background-color: #f4f4f4;
+    text-align: center;
+  
+  }
+  
+  .image-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  } 
+  
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: absolute; /* Change to relative */
+    top: 50%; /* Adjust this value to position the cards */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust the width as needed */
+    z-index: 1; /* Ensure the cards are above the image */
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin-bottom: 0;
+  }
+  
+  
+  .footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-media {
+    margin-top: 10px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  
+  .social-icon i {
+    color: #fff;
+  }
+  
+  .social-icon i:hover {
+    color: #ccc;
+  }
+  
+  
+  .btn-small {
+     display: inline-block;
+     padding: 10px 20px;
+     font-size: 14px;
+     color: #fff;
+     background-color: #cd7d0c;
+     border: none;
+     border-radius: 5px;  
+     align-self: center; 
+     margin-top: 20px; 
+     text-decoration: none;
+     transition: background-color 0.3s ease;
+    }
+    
+    .btn-small:hover {
+     background-color: #e8a15a;
+    }
+  

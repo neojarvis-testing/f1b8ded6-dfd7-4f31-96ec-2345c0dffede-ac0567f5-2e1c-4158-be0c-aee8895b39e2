@@ -1,1 +1,31 @@
-<h1>Announcements</h1>
+<div>
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+    <h1>Announcements</h1>
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" />
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Published Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let announcement of paginatedAnnouncements; let i = index">
+                <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                <td>{{ announcement.Title }}</td>
+                <td>{{ announcement.Content }}</td>
+                <td>{{ announcement.PublishedDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination">
+        <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+        <button (click)="changePage(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= filteredAnnouncements.length">Next</button>
+    </div>
+  </div>
+ 
+
+    
+ 

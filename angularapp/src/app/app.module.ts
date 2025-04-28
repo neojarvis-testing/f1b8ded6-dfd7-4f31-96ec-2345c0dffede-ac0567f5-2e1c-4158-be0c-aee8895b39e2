@@ -22,6 +22,9 @@ import { UserViewBlogComponent } from './components/user-view-blog/user-view-blo
 import { UserViewFeedbackComponent } from './components/user-view-feedback/user-view-feedback.component';
 import { FormsModule } from '@angular/forms';
 
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,12 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,FormsModule
+
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

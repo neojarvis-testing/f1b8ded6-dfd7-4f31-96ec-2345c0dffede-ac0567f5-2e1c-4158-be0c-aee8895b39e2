@@ -1,0 +1,115 @@
+/* Basic styling for the component */
+div {
+    padding: 20px;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the image cover the entire screen */
+    z-index: -1; /* Place the image behind the content */
+  }
+  
+  h1 {
+    color: #010101;
+    text-align: center; /* Center the heading */
+  }
+  
+  input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    margin: 12px auto;
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5); /* Set the background color to white with transparency */
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.8); /* Set the background color to white with transparency */
+  }
+  
+  th {
+    background-color: rgba(255, 112, 67, 0.8); /* Set the background color to orange with transparency */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    input[type="text"] {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    th, td {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    input[type="text"] {
+      padding: 8px;
+      font-size: 12px;
+    }
+  
+    table, th, td {
+      display: block;
+      width: 100%;
+    }
+  
+    th, td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    th::before, td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  
