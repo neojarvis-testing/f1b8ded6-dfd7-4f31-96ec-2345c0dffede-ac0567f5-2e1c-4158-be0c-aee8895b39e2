@@ -21,6 +21,8 @@ import { UserViewAnnouncementComponent } from './components/user-view-announceme
 import { UserViewBlogComponent } from './components/user-view-blog/user-view-blog.component';
 import { UserViewFeedbackComponent } from './components/user-view-feedback/user-view-feedback.component';
 import { FormsModule } from '@angular/forms';
+
+
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -46,6 +48,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+
+    AppRoutingModule,FormsModule
+
     AppRoutingModule,
     FormsModule,
     HttpClientModule
