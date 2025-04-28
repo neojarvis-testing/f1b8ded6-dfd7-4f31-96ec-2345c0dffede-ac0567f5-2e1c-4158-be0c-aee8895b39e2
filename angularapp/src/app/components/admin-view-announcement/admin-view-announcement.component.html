@@ -1,4 +1,53 @@
-
-
-<h2>Announcements</h2>
-
+<div class="background-container">
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+    <div class="profile-container">
+      <h2>Announcements</h2>
+      <input type="text" placeholder="Search by Title..." [(ngModel)]="searchTerm" (input)="search()" />
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Published Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let announcement of paginatedAnnouncements; let i = index">
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>{{ announcement.Title }}</td>
+            <td>{{ announcement.Content }}</td>
+            <td>{{ announcement.Category }}</td>
+            <td>{{ announcement.Priority }}</td>
+            <td>{{ announcement.PublishedDate | date: 'short' }}</td>
+            <td>{{ announcement.Status }}</td>
+            <td class="action-buttons">
+              <button class="edit" (click)="editAnnouncement(announcement.AnnouncementId!)">Edit</button>
+              <button class="delete" (click)="confirmDelete(announcement.AnnouncementId!)">Delete</button>
+              <button class="toggle" (click)="toggleStatus(announcement)">
+                {{ announcement.Status === 'Active' ? 'Mark as Inactive' : 'Mark as Active' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button *ngFor="let page of [].constructor(totalPages); let i = index" (click)="changePage(i + 1)">
+          {{ i + 1 }}
+        </button>
+      </div>
+      <div class="popup" *ngIf="showDeletePopup">
+        <div class="popup-content">
+          <p>Are you sure you want to delete this announcement?</p>
+          <button class="pop-btn" (click)="deleteAnnouncement()">Yes, Delete</button>
+          <button class="pop-btnn" (click)="cancelDelete()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

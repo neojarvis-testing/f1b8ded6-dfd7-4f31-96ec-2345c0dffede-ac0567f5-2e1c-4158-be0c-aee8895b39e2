@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc; /* Soft background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-background {
+  background-image: url('/assets/login.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Consistent modal sizing with proper padding and overflow */
+.login-container,
+.otp-container {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  overflow: auto; /* ensures that extra content scrolls instead of overflowing */
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+  /* Remove fixed min-height if content overflows; you may re-add it if desired */
+  /* min-height: 450px; */
+}
+
+.otp-container {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 15px;
+  /* min-height: 300px; */
+}
+
+/* Form styling with explicit spacing */
+.login-container form,
+.otp-container form {
+  display: block;
+  text-align: left;
+}
+
+.login-container form .form-group,
+.otp-container form .form-group {
+  margin-bottom: 20px;
+}
+
+/* Add explicit spacing for inputs and error messages */
+.login-container form input,
+.otp-container form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  background-color: #f9fafc;
+  font-size: 16px;
+  color: #333333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.login-container form input:focus,
+.otp-container form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Ensure error messages are spaced */
+.error {
+  color: #ff4757;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"],
+.otp-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px; /* Provides extra space above the button */
+  border-radius: 6px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[type="submit"]:hover,
+.otp-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active,
+.otp-container button:active {
+  transform: translateY(0);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 20px;
+}
+
+.otp-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-container, .otp-container {
+    padding: 30px;
+    width: 90%;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    font-size: 14px;
+  }
+  
+  button[type="submit"],
+  .otp-container button {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 12px;
+  }
+}
+
+.register-prompt {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-prompt a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-prompt a:hover {
+  text-decoration: underline;
+}

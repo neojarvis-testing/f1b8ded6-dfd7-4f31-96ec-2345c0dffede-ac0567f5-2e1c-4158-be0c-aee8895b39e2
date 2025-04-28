@@ -1,1 +1,22 @@
-<h2 class="centered-heading">Add Feedback</h2>
+<div class="add-feedback-container">
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+      <h2 class="centered-heading">Add Feedback</h2>
+      <div class="form-container">
+        <form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)">
+          <div class="form-group">
+            <label for="feedbackText">Feedback<span class="required">*</span></label>
+            <textarea id="feedbackText" [(ngModel)]="feedback.FeedbackText" name="feedbackText" required></textarea>
+            <div *ngIf="feedbackForm.submitted && !feedback.FeedbackText" class="validation-message">
+              Feedback is required.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="showPopup" class="popup">
+      <div class="popup-content">
+        <p>Successfully Added!</p>
+        <button (click)="closePopup()">Ok</button>
+      </div>
+    </div>
