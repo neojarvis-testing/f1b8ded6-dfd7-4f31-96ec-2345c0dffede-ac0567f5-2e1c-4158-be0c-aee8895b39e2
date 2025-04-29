@@ -16,9 +16,9 @@ import { UserViewAnnouncementComponent } from './components/user-view-announceme
 import { UserViewBlogComponent } from './components/user-view-blog/user-view-blog.component';
 import { UserViewFeedbackComponent } from './components/user-view-feedback/user-view-feedback.component';
 import { AuthGuard } from './components/authguard/auth.guard';
-// import { UserProfileComponent } from './components/user-profile/user-profile.component';
-// import { FaqComponent } from './components/faq/faq.component';
-// import { FooterComponent } from './components/footer/footer.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -40,12 +40,12 @@ const routes: Routes = [
   {path:'usernavbar',component:UserNavbarComponent,canActivate:[AuthGuard], data: {role: 'User'}},
   {path:'userviewannouncement',component:UserViewAnnouncementComponent,canActivate:[AuthGuard], data: {role: 'User'}},
   {path:'userviewblog',component:UserViewBlogComponent,canActivate:[AuthGuard], data: {role: 'User'}},
-  // {path:'userprofile',component:UserProfileComponent,canActivate:[AuthGuard], data: {role: 'User'}},
+  {path:'userprofile',component:UserProfileComponent,canActivate:[AuthGuard], data: {role: 'User'}},
   {path:'usereditblog',component:UserViewBlogComponent,canActivate:[AuthGuard],data:{role:'User'}},
   {path:'userdeleteblog',component:UserViewBlogComponent,canActivate:[AuthGuard],data:{role:'User'}},
   {path:'userviewfeedback',component:UserViewFeedbackComponent,canActivate:[AuthGuard], data: {role: 'User'}},
-  // {path:'footer',component:FooterComponent},
-  // {path:'faq',component:FaqComponent},
+  {path:'footer',component:FooterComponent},
+  {path:'faq',component:FaqComponent},
   { path: 'error', component: ErrorComponent },
   // { path: '**', redirectTo: '/error?code=404' },
   {path:'', redirectTo:'home', pathMatch:'full'}

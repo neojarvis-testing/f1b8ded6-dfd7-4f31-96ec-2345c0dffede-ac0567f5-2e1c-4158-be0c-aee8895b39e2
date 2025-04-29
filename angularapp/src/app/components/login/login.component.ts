@@ -60,32 +60,32 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // // Called when the OTP verification form is submitted.
-  // verifyOtp(): void {
-  //   if (!this.user.Email) {
-  //     this.loginError = 'Email is required for OTP verification';
-  //     return;
-  //   }
-  //   if (!this.userOtp) {
-  //     this.loginError = 'Please enter the OTP sent to your email';
-  //     return;
-  //   }
-  //   const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the API.
-  //   this.authService.verifyLoginOtp(payload).subscribe(
-  //     response => {
-  //       console.log('OTP verified successfully', response);
-  //       Swal.fire('Success', 'Login successful', 'success');
-  //       this.loginError = null;
-  //       this.loginSuccess = true;
-  //       // Redirect to home (or any other desired page).
-  //       this.router.navigate(['/home']);
-  //     },
-  //     error => {
-  //       console.error('OTP verification error', error);
-  //       this.loginError = error.error?.Message || 'OTP verification failed. Please try again.';
-  //     }
-  //   );
-  // }
+  // Called when the OTP verification form is submitted.
+  verifyOtp(): void {
+    if (!this.user.Email) {
+      this.loginError = 'Email is required for OTP verification';
+      return;
+    }
+    if (!this.userOtp) {
+      this.loginError = 'Please enter the OTP sent to your email';
+      return;
+    }
+    const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the API.
+    this.authService.verifyLoginOtp(payload).subscribe(
+      response => {
+        console.log('OTP verified successfully', response);
+        Swal.fire('Success', 'Login successful', 'success');
+        this.loginError = null;
+        this.loginSuccess = true;
+        // Redirect to home (or any other desired page).
+        this.router.navigate(['/home']);
+      },
+      error => {
+        console.error('OTP verification error', error);
+        this.loginError = error.error?.Message || 'OTP verification failed. Please try again.';
+      }
+    );
+  }
 
   // Resets the login error message.
   resetLoginError(): void {

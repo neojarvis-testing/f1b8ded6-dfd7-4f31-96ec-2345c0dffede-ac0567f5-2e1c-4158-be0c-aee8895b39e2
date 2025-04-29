@@ -1,0 +1,48 @@
+<div class="background-container">
+    <img src="/assets/image/three.jpg" alt="Background Image" class="background-image">
+    <div class="profile-container">
+      <h2>BlogPost Account</h2>
+      <div class="user-info">
+        <p><strong>Username:</strong> {{ userProfile.Username }}</p>
+        <p><strong>Email:</strong> {{ userProfile.Email }}</p>
+        <p><strong>Mobile Number:</strong> {{ userProfile.MobileNumber }}</p>
+        <p><strong>Role:</strong> {{ userProfile.UserRole }}</p>
+        <p><strong>Total Blogs Posted:</strong> {{ userBlogs.length }}</p>
+      </div>
+    
+      <h3>Your Blog Posts</h3>
+      <table class="blog-table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blog of userBlogs; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ blog.Title }}</td>
+            <td>{{ blog.Content }}</td>
+            <td>{{ blog.Status }}</td>
+            <td>
+              <button class="action-btn edit" (click)="editBlog(blog.BlogPostId!)" [disabled]="blog.Status === 'Approved'">Edit</button>
+              <button class="action-btn delete" (click)="confirmDelete(blog)" [disabled]="blog.Status === 'Approved'">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <!-- Delete Confirmation Popup -->
+      <div class="popup" *ngIf="showDeletePopup">
+        <div class="popup-content">
+          <p>Are you sure you want to delete this blog post?</p>
+          <button class="confirm-btn" (click)="deleteBlog()">Yes, Delete</button>
+          <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
