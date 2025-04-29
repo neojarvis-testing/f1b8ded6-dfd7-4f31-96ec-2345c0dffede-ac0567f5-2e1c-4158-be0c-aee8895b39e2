@@ -12,7 +12,7 @@ using dotnetapp.Exceptions;
 namespace dotnetapp.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/blogposts")]
     public class BlogPostController : ControllerBase
     {
         private readonly BlogPostService _blogPostService;
