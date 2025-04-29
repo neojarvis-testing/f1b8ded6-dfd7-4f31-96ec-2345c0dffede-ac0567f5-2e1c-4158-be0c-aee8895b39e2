@@ -9,19 +9,19 @@ using dotnetapp.Models;
 using dotnetapp.Services;
 using System;
 using System.IO;
-// using log4net;
+using log4net;
 
 
-// var logger = LogManager.GetLogger(typeof(Program));
-// logger.Info("Application started - testing log creation.");
+var logger = LogManager.GetLogger(typeof(Program));
+logger.Info("Application started - testing log creation.");
 
-// // At the very start of your Main method, add:
-// Console.WriteLine("Current working directory: " + Directory.GetCurrentDirectory());
+// At the very start of your Main method, add:
+Console.WriteLine("Current working directory: " + Directory.GetCurrentDirectory());
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add log4net support (ensure the log4net.config file is in your project root)
-// builder.Logging.AddLog4Net(".config/log4net.config");
+builder.Logging.AddLog4Net(".config/log4net.config");
 
 
 // Add Controllers
@@ -62,19 +62,19 @@ builder.Services.AddAuthentication(options =>
     };
 
     // Allow SignalR to retrieve the JWT token from the query string.
-    // options.Events = new JwtBearerEvents
-    // {
-    //     OnMessageReceived = context =>
-    //     {
-    //         var accessToken = context.Request.Query["access_token"];
-    //         var path = context.HttpContext.Request.Path;
-    //         if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/chatHub"))
-    //         {
-    //             context.Token = accessToken;
-    //         }
-    //         return Task.CompletedTask;
-    //     }
-    // };
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            var accessToken = context.Request.Query["access_token"];
+            var path = context.HttpContext.Request.Path;
+            if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/chatHub"))
+            {
+                context.Token = accessToken;
+            }
+            return Task.CompletedTask;
+        }
+    };
 });
 
 // Update CORS policy to allow specific origins and credentials
@@ -82,13 +82,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        policy.WithOrigins("https://8081-dedadddddbafecbafcedadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-ceaeccbebfffaedadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-cdebaaabaaceadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-abfbbbdabfccfffadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-cebeddbfbadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-dedadddddbafecbafcedadafebfecdebbceacfecbecaeebe.premiumproject.examly.io",
-                           "https://8081-dfaadbbbbbadafebfecdebbceacfecbecaeebe.premiumproject.examly.io")
+        policy.WithOrigins("https://8081-aabcfacbacdffcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //Venky
+                           "https://8081-afceddbaaffcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //Sanjay
+                           "https://8081-ceeececeecbeefcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //ramakrishna
+                           "https://8081-bafbfdacfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //yakshit
+                           "https://8081-dcecbcadabfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //gowtham
+                           "https://8081-effbdcbbdcfffdbfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io") //vaishnavi
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
@@ -127,7 +126,7 @@ builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<AnnouncementService>();
 builder.Services.AddTransient<BlogPostService>();
 builder.Services.AddScoped<FeedbackService>();
-//builder.Services.AddTransient<IEmailService, EmailService>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -154,6 +153,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Map SignalR hub endpoint.
-// app.MapHub<ChatHub>("/chatHub");
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
