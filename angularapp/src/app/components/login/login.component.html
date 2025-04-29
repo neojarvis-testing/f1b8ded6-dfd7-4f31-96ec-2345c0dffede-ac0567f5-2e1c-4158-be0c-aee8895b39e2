@@ -2,59 +2,83 @@
 <div class="login-background" style="background-image: url('/assets/login.png');">
     <!-- Login Form (shown when OTP is not required) -->
     <div *ngIf="!otpVerificationRequired" class="login-container">
-        <h2>Login</h2>
-        <!-- Email and Password Form -->
-        <form (ngSubmit)="login(loginForm)" #loginForm="ngForm" novalidate>
-            <div class="form-group">
-                <label for="email" class="bold-label">Email*</label>
-                <input type="email" id="email" [(ngModel)]="user.Email" name="email" placeholder="Enter your email"
-                    required email #emailField="ngModel" (input)="resetLoginError()" />
-                <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="error">
-                    <div *ngIf="emailField.errors?.required">Email is required.</div>
-                    <div *ngIf="emailField.errors?.email">Please enter a valid email address.</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="bold-label">Password*</label>
-                <input type="password" id="password" [(ngModel)]="user.Password" name="password"
-                    placeholder="Enter your password" required #passwordField="ngModel" (input)="resetLoginError()" />
-                <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)" class="error">
-                    <div *ngIf="passwordField.errors?.required">Password is required.</div>
-                </div>
-            </div>
-
-            <!-- Show validation error messages -->
-            <div *ngIf="loginError" class="error">
-                {{ loginError }}
-            </div>
-
-            <button type="submit" class="submit-button">
-                Login
-            </button>
-        </form>
-
-        <!-- Register prompt -->
-        <p class="register-prompt">
-            Don't have an account? <a routerLink="/register">Register Here</a>
-        </p>
-    </div>
-
-    <!-- OTP Verification Form (shown when OTP is required) -->
-    <!-- <div *ngIf="otpVerificationRequired" class="otp-wrapper">
-        <div class="otp-container">
-            <h2>Enter OTP</h2>
-            <form (ngSubmit)="verifyOtp()">
-                <input type="text" id="otp" [(ngModel)]="userOtp" name="otp"
-                    placeholder="Enter the OTP sent to your email" required (input)="resetLoginError()" />
-
-                 Error message for OTP 
-                <div *ngIf="loginError" class="error">
-                    {{ loginError }}
-                </div>
-
-                <button type="submit" class="submit-button">Verify OTP</button>
-            </form>
+      <h2>Login</h2>
+      <!-- Email and Password Form -->
+      <form (ngSubmit)="login(loginForm)" #loginForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="email" class="bold-label">Email*</label>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="user.Email" 
+            name="email" 
+            placeholder="Enter your email" 
+            required 
+            email
+            #emailField="ngModel"
+            (input)="resetLoginError()" />
+          <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="error">
+            <div *ngIf="emailField.errors?.required">Email is required.</div>
+            <div *ngIf="emailField.errors?.email">Please enter a valid email address.</div>
+          </div>
         </div>
-    </div> -->
-</div>
+  
+        <div class="form-group">
+          <label for="password" class="bold-label">Password*</label>
+          <input 
+            type="password" 
+            id="password" 
+            [(ngModel)]="user.Password" 
+            name="password" 
+            placeholder="Enter your password" 
+            required 
+            #passwordField="ngModel"
+            (input)="resetLoginError()" />
+          <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)" class="error">
+            <div *ngIf="passwordField.errors?.required">Password is required.</div>
+          </div>
+        </div>
+  
+        <!-- Show validation error messages -->
+        <div *ngIf="loginError" class="error">
+          {{ loginError }}
+        </div>
+  
+        <button 
+          type="submit" 
+          class="submit-button">
+          Login
+        </button>
+      </form>
+      
+      <!-- Register prompt -->
+      <p class="register-prompt">
+        Don't have an account? <a routerLink="/register">Register Here</a>
+      </p>
+    </div>
+  
+    <!-- OTP Verification Form (shown when OTP is required) -->
+    <div *ngIf="otpVerificationRequired" class="otp-wrapper">
+      <div class="otp-container">
+        <h2>Enter OTP</h2>
+        <form (ngSubmit)="verifyOtp()">
+          <input 
+            type="text" 
+            id="otp" 
+            [(ngModel)]="userOtp" 
+            name="otp" 
+            placeholder="Enter the OTP sent to your email" 
+            required
+            (input)="resetLoginError()" />
+  
+          <!-- Error message for OTP -->
+          <div *ngIf="loginError" class="error">
+            {{ loginError }}
+          </div>
+  
+          <button type="submit" class="submit-button">Verify OTP</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
