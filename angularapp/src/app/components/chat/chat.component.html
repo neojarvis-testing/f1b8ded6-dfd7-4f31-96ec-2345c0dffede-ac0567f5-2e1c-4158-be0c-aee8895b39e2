@@ -1,0 +1,35 @@
+<div *ngIf="role=='Admin' || role=='User'" class="chat-box">
+    <div class="header">
+      <h2>Community Chat</h2>
+      <!-- Emoji button to toggle the emoji panel -->
+      <button class="emoji-btn" (click)="toggleEmojiPanel()">😊</button>
+    </div>
+  
+    <!-- Message display area -->
+    <div class="messages">
+      <!-- For each message, display "Username: <username> here: <message>" -->
+      <div *ngFor="let msg of messages" class="message">
+        <span class="username">{{ msg.user }} : </span>
+        <span class="text">{{ msg.message }}</span>
+      </div>
+    </div>
+  
+    <!-- Input field and Send button -->
+    <div class="input-container">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type your message" />
+      <button [disabled]="!connectionEstablished" (click)="sendMessage()">Send</button>
+    </div>
+  
+    <!-- Emoji panel; displays only when showEmojiPanel is true -->
+    <div class="emoji-panel" *ngIf="showEmojiPanel">
+      <span (click)="selectEmoji('😀')">😀</span>
+      <span (click)="selectEmoji('😂')">😂</span>
+      <span (click)="selectEmoji('😍')">😍</span>
+      <span (click)="selectEmoji('🤔')">🤔</span>
+      <span (click)="selectEmoji('👍')">👍</span>
+      <span (click)="selectEmoji('😢')">😢</span>
+      <span (click)="selectEmoji('🎉')">🎉</span>
+      <!-- Add more emojis as desired -->
+    </div>
+  </div>
+  

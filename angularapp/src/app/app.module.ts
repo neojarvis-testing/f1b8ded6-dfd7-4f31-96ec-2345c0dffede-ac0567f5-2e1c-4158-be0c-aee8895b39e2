@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { AdminAddAnnouncementComponent } from './components/admin-add-announcement/admin-add-announcement.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminViewAnnouncementComponent } from './components/admin-view-announcement/admin-view-announcement.component';
@@ -16,15 +15,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { UserAddBlogComponent } from './components/user-add-blog/user-add-blog.component';
 import { UserAddFeedbackComponent } from './components/user-add-feedback/user-add-feedback.component';
-import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { UserViewAnnouncementComponent } from './components/user-view-announcement/user-view-announcement.component';
 import { UserViewBlogComponent } from './components/user-view-blog/user-view-blog.component';
 import { UserViewFeedbackComponent } from './components/user-view-feedback/user-view-feedback.component';
-import { FormsModule } from '@angular/forms';
-
-
-
+import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 
 @NgModule({
@@ -42,17 +42,22 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     UserAddBlogComponent,
     UserAddFeedbackComponent,
-    UserNavbarComponent,
     UserViewAnnouncementComponent,
     UserViewBlogComponent,
-    UserViewFeedbackComponent
-
+    UserViewFeedbackComponent,
+    UserNavbarComponent,
+    FooterComponent,
+    ChatComponent,
+    UserProfileComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule, 
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
