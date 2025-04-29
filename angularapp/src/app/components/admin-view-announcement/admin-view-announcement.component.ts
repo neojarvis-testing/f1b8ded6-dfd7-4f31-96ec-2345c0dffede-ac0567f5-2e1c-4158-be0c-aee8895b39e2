@@ -102,4 +102,3 @@ export class AdminViewAnnouncementComponent implements OnInit {
     return Math.ceil(this.filteredAnnouncements.length / this.itemsPerPage);
   }
 }
-

@@ -3,7 +3,7 @@ import { Feedback } from 'src/app/models/feedback.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { FeedbackService } from 'src/app/services/feedback.service';
 import { Router } from '@angular/router';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-view-feedback',
@@ -57,12 +57,12 @@ export class UserViewFeedbackComponent implements OnInit {
           this.showDeleteModal = false;
           this.loadFeedbacks();
          
-          // Swal.fire({
-          //   title: 'Feedback Deleted',
-          //   text: 'The feedback has been successfully deleted!',
-          //   icon: 'success',
-          //   confirmButtonText: 'OK'
-          // });
+          Swal.fire({
+            title: 'Feedback Deleted',
+            text: 'The feedback has been successfully deleted!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
           this.router.navigate(['/userviewfeedback']);
         },
         (error) => {
