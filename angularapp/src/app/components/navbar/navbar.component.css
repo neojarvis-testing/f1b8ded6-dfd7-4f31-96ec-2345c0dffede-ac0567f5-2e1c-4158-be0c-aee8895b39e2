@@ -5,11 +5,14 @@
 
 
 nav {
-    background-color: #333;
+    /* background-color:white; */
     padding: 0.7em;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+
   }
   
   /* Style for the title */
@@ -66,7 +69,7 @@ nav {
     top: 0;
     transition: 0.3s ease-in-out;
     opacity: 1;
-    color: #FFABAB;
+    
     overflow: hidden;
     max-width: 0%;
     max-height: 0%;
@@ -77,9 +80,10 @@ nav {
     max-height: 100%;
   }
   
-  nav ul li a:hover {
-    color: #00bcd4;
-  }
+  /* nav ul li a:hover {
+    
+    
+  } */
   
   /* Hamburger Menu Styling */
   .hamburger-menu {
