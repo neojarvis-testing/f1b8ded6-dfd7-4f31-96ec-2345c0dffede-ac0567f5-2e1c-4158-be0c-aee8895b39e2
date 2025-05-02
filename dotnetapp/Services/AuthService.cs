@@ -272,9 +272,9 @@ namespace dotnetapp.Services
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:Issuer"],
-                audience: _configuration["JWT:Issuer"],
+                audience: _configuration["JWT:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(30),
+                expires: DateTime.UtcNow.AddMinutes(30),  
                 signingCredentials: creds
             );
 
