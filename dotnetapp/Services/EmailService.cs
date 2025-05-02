@@ -32,7 +32,7 @@ namespace dotnetapp.Services
 
             mailMessage.To.Add(toEmail);
 
-            await smtpClient.SendMailAsync(mailMessage);
+            await smtpClient.SendMailAsync(mailMessage); //in-built function to send email
         }
     }
 }
