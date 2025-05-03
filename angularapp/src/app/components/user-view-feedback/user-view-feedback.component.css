@@ -47,7 +47,7 @@
   }
   
   .feed-table th {
-    background: #ff7043; /* Updated to match nav background */
+    background: rgba(0, 0, 0, 0.4); /* Updated to match nav background */
     color: white;
     font-weight: bold;
   }
@@ -57,7 +57,7 @@
   }
   
   button {
-    background: #ff7043; /* Updated to match nav background */
+    background: black; /* Updated to match nav background */
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -67,7 +67,7 @@
   }
   
   button:hover {
-    background: #ffab40; /* Lighter orange on hover */
+    background: rgba(0, 0, 0, 0.4); /* Lighter orange on hover */
   }
   
   .pagination {
@@ -79,7 +79,7 @@
   .pagination button {
     padding: 10px 20px;
     margin: 0 5px;
-    background-color: #ff7043;
+    background-color: black;
     color: white;
     border: none;
     cursor: pointer;

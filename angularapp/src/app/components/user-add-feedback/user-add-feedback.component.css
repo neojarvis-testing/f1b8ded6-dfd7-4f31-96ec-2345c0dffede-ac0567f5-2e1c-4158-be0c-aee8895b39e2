@@ -9,7 +9,7 @@ body {
   .add-feedback-container {
     max-width: 800px; /* Increased max-width for wider container */
     margin: 40px auto 0 auto; 
-    border: 2px solid rgb(237, 180, 95); 
+    
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -30,7 +30,7 @@ body {
    
   .centered-heading {
     margin-bottom: 20px;
-    color: #ff7043;
+    color: black;
     font-size: 24px;
   }
    
@@ -85,12 +85,12 @@ body {
   }
    
   .btn-success {
-    background-color: #ff7043;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
   }
    
   .btn-success:hover {
-    background-color: #ff7043;
+    background-color: rgba(0, 0, 0, 5);
   }
    
   /* Validation Message */
