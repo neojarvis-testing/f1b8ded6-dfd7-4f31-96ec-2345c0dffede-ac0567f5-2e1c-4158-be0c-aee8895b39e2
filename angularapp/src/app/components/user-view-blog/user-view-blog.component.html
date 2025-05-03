@@ -33,11 +33,11 @@
             </td>
             <td>{{ blog.Status }}</td>
             <td>
-              <button  class="btn-orange" (click)="editBlog(blog.BlogPostId); $event.stopPropagation()"
+              <button  class="btn-edit" (click)="editBlog(blog.BlogPostId); $event.stopPropagation()"
                       [disabled]="blog.Status === 'Approved' || userID != blog.UserId">
                 Edit
               </button>
-              <button class="btn-orange" (click)="confirmDelete(blog.BlogPostId); $event.stopPropagation()"
+              <button class="btn-delete" (click)="confirmDelete(blog.BlogPostId); $event.stopPropagation()"
                       [disabled]="blog.Status === 'Approved' || userID != blog.UserId">
                 Delete
               </button>

@@ -17,15 +17,15 @@
   }
   
   .btn{
-    background-color: #ff7043;
+    background-color: black;
     border: none;
     color: white;
     padding: 10px;
     border-radius: 8px;
   }
   
-  .btn-orange{
-    background-color: #ff7043;
+  .btn-edit{
+    background-color: blue;
     border: none;
     color: white;
     padding: 10px; 
@@ -34,6 +34,15 @@
     margin-left: 10px; 
   }
    
+  .btn-delete{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px; 
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px; 
+  }
   /* Remove margin and padding from body to eliminate white space */
   body {
     margin: 0;
