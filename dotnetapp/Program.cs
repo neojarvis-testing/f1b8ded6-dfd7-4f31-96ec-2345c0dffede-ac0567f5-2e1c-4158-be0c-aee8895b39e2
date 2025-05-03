@@ -85,7 +85,7 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("https://8081-aabcfacbacdffcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //Venky
                            "https://8081-afceddbaaffcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //Sanjay
                            "https://8081-ceeececeecbeefcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //ramakrishna
-                           "https://8081-bafbfdacfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //yakshit
+                           "https://8081-bafbfdacfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //yakshith
                            "https://8081-dcecbcadabfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io", //gowtham
                            "https://8081-effbdcbbdcfffdbfcbffdbecdcbacfecbecaeebe.premiumproject.examly.io") //vaishnavi
               .AllowAnyMethod()
@@ -128,7 +128,8 @@ builder.Services.AddTransient<BlogPostService>();
 builder.Services.AddScoped<FeedbackService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 
-builder.Services.AddEndpointsApiExplorer();
+//it registers the necessary services to generate API documentation, such as OpenAPI/Swagger documentation.
+builder.Services.AddEndpointsApiExplorer(); 
 
 // Register SignalR services
 builder.Services.AddSignalR();

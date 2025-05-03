@@ -15,3 +15,5 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+//This is the home component start of angular app
