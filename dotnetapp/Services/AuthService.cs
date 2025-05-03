@@ -76,7 +76,7 @@ namespace dotnetapp.Services
             // Log a generic message without exposing OTP details.
             Console.WriteLine($"[Registration OTP] OTP generated for '{normalizedEmail}' with expiry at {expiry.ToLocalTime()}.");
 
-            // Send the OTP via email.
+          
             await _emailService.SendEmailAsync(model.Email, "Your Registration OTP",
                 $"Your OTP for registration is: {otp}. It is valid for 5 minutes.");
 
