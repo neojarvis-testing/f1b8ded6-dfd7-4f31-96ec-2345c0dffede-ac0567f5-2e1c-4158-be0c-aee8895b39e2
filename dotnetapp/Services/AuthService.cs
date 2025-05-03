@@ -10,17 +10,17 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity; 
 using Microsoft.Extensions.Configuration;
 
 namespace dotnetapp.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly IConfiguration _configuration;
+        private readonly UserManager<ApplicationUser> _userManager;//login ,reg 
+        private readonly SignInManager<ApplicationUser> _signInManager;//login
+        private readonly RoleManager<IdentityRole> _roleManager;//manages roles
+        private readonly IConfiguration _configuration;//jwt
         private readonly ApplicationDbContext _context;
         private readonly IEmailService _emailService;
 
