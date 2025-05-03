@@ -83,7 +83,7 @@ namespace dotnetapp.Services
             return (1, "OTP sent successfully.");
         }
 
-        
+        // STEP 2: Verify the registration OTP and complete the registration.
         public async Task<(int, string)> VerifyRegistrationOtp(string email, string otp)
         {
             var normalizedEmail = email.Trim().ToLower();
