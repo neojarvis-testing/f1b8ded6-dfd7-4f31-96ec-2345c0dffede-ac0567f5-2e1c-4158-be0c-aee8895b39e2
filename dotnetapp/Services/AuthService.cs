@@ -10,7 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity; //framework
 using Microsoft.Extensions.Configuration;
 
 namespace dotnetapp.Services
@@ -160,10 +160,8 @@ namespace dotnetapp.Services
             Console.WriteLine($"[Registration OTP] User '{normalizedEmail}' created successfully.");
             return (1, "User created successfully!");
         }
-
-        // -------------------------------------
+       
         // Login Flow with OTP and Password Check
-        // -------------------------------------
 
         // Standard login to generate a JWT token.
         public async Task<(int, string)> Login(LoginModel model)
@@ -206,7 +204,7 @@ namespace dotnetapp.Services
                 return (0, "Invalid email");
             }
 
-            // Validate the user's password using SignInManager.
+            // Validates the user's password using SignInManager.
             var signInResult = await _signInManager.CheckPasswordSignInAsync(user, model.Password, false);
             if (!signInResult.Succeeded)
             {
@@ -260,12 +258,9 @@ namespace dotnetapp.Services
             return (0, "OTP not found or expired.");
         }
 
-        // -----------------------------
-        // Helper: Token Generation
-        // -----------------------------
+       //Token Generation
         private string GenerateToken(IEnumerable<Claim> claims)
         {
-            // WARNING: Ensure that the JWT secret key is obtained from a secure source (e.g., an environment variable or a secret manager)
             var secretKey = _configuration["JWT:SecretKey"];
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
