@@ -47,9 +47,9 @@ namespace dotnetapp.Services
             _emailService = emailService;
         }
 
-        // ----------------------------------------------------
+        // --------------------------------------------------------------
         // Registration Flow with OTP (Send and Verify OTP)
-        // ----------------------------------------------------
+        // ----------------------------------------------------------------
 
         // STEP 1: Send an OTP when the user registers.
         public async Task<(int, string)> SendRegistrationOtp(User model)
