@@ -101,7 +101,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  // Toggle password or confirm password visibility.
+  // Toggle password or confirm password visibility------
   togglePasswordVisibility(field: string): void {
     if (field === 'password') {
       this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
