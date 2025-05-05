@@ -2,7 +2,7 @@
     <div class="registration-container">
       <h1>Registration</h1>
   
-      <!-- Show Registration Form if OTP not yet sent -->
+      <!---- Show Registration Form if OTP not yet sent ---->
       <div *ngIf="!otpSent">
         <form (ngSubmit)="onRegister()" #registerForm="ngForm">
           <!-- Username Field -->

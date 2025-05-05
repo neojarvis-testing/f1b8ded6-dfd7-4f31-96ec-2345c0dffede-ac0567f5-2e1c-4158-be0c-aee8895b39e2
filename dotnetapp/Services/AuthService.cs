@@ -10,9 +10,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-
-using Microsoft.AspNetCore.Identity; 
-
 using Microsoft.AspNetCore.Identity; //framework
 using Microsoft.Extensions.Configuration;
 
@@ -65,7 +62,7 @@ namespace dotnetapp.Services
                 return (0, "User already exists");
             }
 
-            // Normalize the email.
+            
             var normalizedEmail = model.Email.Trim().ToLower();
 
             // Generate a 6-digit OTP and set a 5-minute expiration (UTC).
