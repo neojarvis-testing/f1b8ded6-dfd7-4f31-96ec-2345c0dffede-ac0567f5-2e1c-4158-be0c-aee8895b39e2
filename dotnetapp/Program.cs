@@ -61,7 +61,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(key)
     };
 
-    // Allow SignalR to retrieve the JWT token from the query string.
+    
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
