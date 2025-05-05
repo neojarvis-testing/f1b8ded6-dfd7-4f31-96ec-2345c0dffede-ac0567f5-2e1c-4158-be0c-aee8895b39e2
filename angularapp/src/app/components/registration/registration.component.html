@@ -39,11 +39,13 @@
               #emailField="ngModel"
               required
               email
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
               placeholder="Enter your email"
             />
             <div *ngIf="emailField.invalid && emailField.touched" class="error">
               <div *ngIf="emailField.errors?.required">Email is required.</div>
               <div *ngIf="emailField.errors?.email">Please enter a valid email address.</div>
+              <div *ngIf="emailField.errors?.pattern">Invalid email format.</div> <!-- Added pattern error -->
             </div>
           </div>
   
