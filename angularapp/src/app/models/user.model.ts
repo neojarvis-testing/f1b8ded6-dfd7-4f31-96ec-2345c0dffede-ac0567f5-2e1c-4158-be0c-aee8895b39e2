@@ -12,5 +12,6 @@ export class User
     MobileNumber: string;
 
     UserRole: string;
+    //comment1
 
 }
