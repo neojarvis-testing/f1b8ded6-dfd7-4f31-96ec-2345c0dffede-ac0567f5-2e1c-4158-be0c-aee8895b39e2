@@ -137,12 +137,12 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
   }
   
   .pagination-controls button:hover {
-    background-color: #0056b3;
+    background-color: black;
   }
   
   /* Responsive Design */
