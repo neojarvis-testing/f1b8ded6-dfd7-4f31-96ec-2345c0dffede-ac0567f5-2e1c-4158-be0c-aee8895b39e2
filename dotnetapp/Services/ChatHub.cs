@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 
-namespace dotnetapp.Services  // Adjust the namespace needed
+namespace dotnetapp.Services  // namespace needed
 {
     public class ChatHub : Hub //Inheriting from hub
     {
