@@ -32,7 +32,10 @@ body {
  .profile-container {
     max-width: 1200px; /* Increased max-width for wider container */
     margin: 20px auto;
-    padding: 20px;
+    padding-top: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -48,7 +51,7 @@ h2 {
 }
 
 input[type="text"] {
- width: 100%;
+ width: 95%;
  padding: 8px;
  margin-bottom: 20px;
  font-size: 16px;
@@ -95,27 +98,27 @@ button {
 }
 
 button.edit {
- background-color: blue;
-}
-
-button.delete {
- background-color: red;
-}
-
-button.toggle {
- background-color: green;
-}
-
-button.delete:hover {
- background-color: lightcoral;
-}
-
-button.edit:hover {
  background-color: #0056b3;
 }
 
+button.delete {
+ background-color: lightcoral;
+}
+
+button.toggle {
+ background-color: #008000a8;
+}
+
+button.delete:hover {
+ background-color: red;
+}
+
+button.edit:hover {
+ background-color: blue;
+}
+
 button.toggle:hover {
- background-color: lightgreen;
+ background-color: green;
 }
 
 .success {
@@ -163,10 +166,10 @@ button.toggle:hover {
  border: none;
  border-radius: 6px;
  cursor: pointer;
- background-color: #333;
+ background-color: rgba(0,0,0,0.5);
  color: white;
 }
 
 .pagination button:hover {
- background-color: #0056b3;
+ background-color: black;
 }
