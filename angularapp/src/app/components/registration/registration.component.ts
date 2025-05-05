@@ -57,7 +57,7 @@ export class RegistrationComponent implements OnInit {
       Password: this.password,
       MobileNumber: this.mobileNumber,
       UserRole: this.userRole,
-      AdminCode: this.adminCode // Include admin code in registration data
+      AdminCode: this.adminCode // Include admin code in registration data------
     };
 
     console.log('Submitting registration data:', registrationData);
