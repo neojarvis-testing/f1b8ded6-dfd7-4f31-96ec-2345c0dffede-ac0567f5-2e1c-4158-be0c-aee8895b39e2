@@ -77,7 +77,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  // Verify OTP to complete registration.
+  // Verify OTP to complete registration--------
   onVerifyOtp(): void {
     // Normalize email to ensure that the same value is used for verification.
     const normalizedEmail = this.email.trim().toLowerCase();
