@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       },
       error => {
-        console.error('OTP verification error', error); //Error in Console log
+        console.error('OTP verification error', error); //Error in Console
         this.loginError = error.error?.Message || 'OTP verification failed. Please try again.';
       }
     );
