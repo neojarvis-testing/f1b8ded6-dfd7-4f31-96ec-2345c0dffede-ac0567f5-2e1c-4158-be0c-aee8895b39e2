@@ -62,7 +62,7 @@ namespace dotnetapp.Services
                 return (0, "User already exists");
             }
 
-            // Normalize the email.
+            
             var normalizedEmail = model.Email.Trim().ToLower();
 
             // Generate a 6-digit OTP and set a 5-minute expiration (UTC).
