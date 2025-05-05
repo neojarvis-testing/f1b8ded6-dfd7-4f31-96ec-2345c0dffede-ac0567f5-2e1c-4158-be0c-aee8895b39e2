@@ -18,6 +18,7 @@ export class ErrorComponent implements OnInit {
       this.setErrorMessage(errorCode);
     });
   }
+  //error
   setErrorMessage(code: string): void {
     switch (code) {
       case '404':
