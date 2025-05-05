@@ -34,7 +34,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Add Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+    .AddDefaultTokenProviders();//default token for each identity
 
 // Configure JSON options (preserve property names)
 builder.Services.AddMvc().AddJsonOptions(options =>
@@ -61,7 +61,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(key)
     };
 
-    // Allow SignalR to retrieve the JWT token from the query string.
+    
     options.Events = new JwtBearerEvents
     {
         OnMessageReceived = context =>
@@ -128,7 +128,7 @@ builder.Services.AddTransient<BlogPostService>();
 builder.Services.AddScoped<FeedbackService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 
-//it registers the necessary services to generate API documentation, such as OpenAPI/Swagger documentation.
+
 builder.Services.AddEndpointsApiExplorer(); 
 
 // Register SignalR services
