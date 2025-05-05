@@ -13,5 +13,6 @@ export class User
 
     UserRole: string;
     //comment1
+    //comment2
 
 }
