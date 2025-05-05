@@ -1,132 +1,135 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #f0f4f8;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .background-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    overflow: hidden;
-  }
-  
-  .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make the image cover the entire screen */
-    z-index: -1; /* Place the image behind the content */
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
-    border: 1px solid #b0bec5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    z-index: 1; /* Ensure the container content is above the background image */
-  }
-  
-  .container h2 {
-    color: black;
-    margin: 20px 0;
-    font-size: 30px;
-  }
-  
-  .table-window {
-    width: 80%;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid #b0bec5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: auto;
-  }
-  
-  /* Table Styles */
-  table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-    font-size: 16px;
-  }
-  
-  th, td {
-    padding: 12px;
-    border: 1px solid grey;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #333; /* Teal color */
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  td {
-    background-color: whitesmoke;
-  }
-  
-  /* Action Buttons */
-  button {
-    margin-right: 8px;
-    padding: 6px 12px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    border-radius: 4px;
-  }
-  
-  button.approve {
-    background-color: green;
-  }
-  
-  button.reject {
-    background-color: red;
-  }
-  
-  button.approve:hover {
-    background-color: lightgreen;
-  }
-  
-  button.reject:hover {
-    background-color: lightcoral;
-  }
-  
-  button[disabled] {
-    background-color: #b0bec5;
-    cursor: not-allowed;
-  }
-  
-  /* Pagination Controls */
-  .pagination {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: #333;
-    color: white;
-  }
-  
-  .pagination button:hover {
-    background-color: #0056b3;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f0f4f8;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  overflow: hidden;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image cover the entire screen */
+  z-index: -1; /* Place the image behind the content */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  border: 1px solid #b0bec5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1; /* Ensure the container content is above the background image */
+}
+
+.container h2 {
+  color: black;
+  margin: 20px 0;
+  font-size: 30px;
+}
+
+.table-window {
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #b0bec5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid grey;
+  text-align: left;
+}
+
+th {
+  background-color: #333; /* Teal color */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  background-color: whitesmoke;
+}
+
+/* Action Buttons */
+button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+}
+
+button.approve {
+  background-color:#008000a8;
+}
+
+button.reject {
+  background-color: lightcoral;
+}
+
+button.approve:hover {
+  background-color: green;
+}
+
+button.reject:hover {
+  background-color: red;
+}
+
+button[disabled] {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+button[disabled]:hover {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Pagination Controls */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: black;
+}
