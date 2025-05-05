@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         console.log('OTP sent successfully', response);
         Swal.fire('Success', 'OTP sent to your email', 'success');
         this.loginError = null;
-        // Set flag to show the OTP verification Form
+        // Setting flag to show the OTP verification Form
         this.otpVerificationRequired = true;
       },
       error => {
