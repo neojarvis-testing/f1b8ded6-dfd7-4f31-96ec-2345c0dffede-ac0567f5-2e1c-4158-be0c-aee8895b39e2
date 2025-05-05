@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       this.loginError = 'Please enter the OTP sent to your email';
       return;
     }
-    const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the API.
+    const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the api.
     this.authService.verifyLoginOtp(payload).subscribe(
       response => {
         console.log('OTP verified successfully', response);
