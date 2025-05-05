@@ -53,11 +53,11 @@ body {
   }
   
   .blog-table th {
-    background-color: #ff7043;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   .action-btn {
-    background-color: #ff7043; /* Orange color */
+    background-color: rgba(0, 0, 0, 0.5); /* Orange color */
     color: white;
     border: none;
     padding: 10px;
@@ -67,7 +67,7 @@ body {
   }
   
   .action-btn:hover {
-    background-color: #e65c00; /* Darker shade of orange for hover effect */
+    background-color: black; /* Darker shade of orange for hover effect */
   }
   
   .popup {

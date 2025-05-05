@@ -269,7 +269,7 @@ namespace dotnetapp.Services
                 issuer: _configuration["JWT:Issuer"],
                 audience: _configuration["JWT:Issuer"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(30),  
+                expires: DateTime.UtcNow.AddMinutes(60),  
                 signingCredentials: creds
             );
 
