@@ -57,7 +57,7 @@ export class RegistrationComponent implements OnInit {
       Password: this.password,
       MobileNumber: this.mobileNumber,
       UserRole: this.userRole,
-      AdminCode: this.adminCode // Include admin code in registration data
+      AdminCode: this.adminCode // Include admin code in registration data------
     };
 
     console.log('Submitting registration data:', registrationData);
@@ -77,7 +77,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  // Verify OTP to complete registration.
+  // Verify OTP to complete registration--------
   onVerifyOtp(): void {
     // Normalize email to ensure that the same value is used for verification.
     const normalizedEmail = this.email.trim().toLowerCase();
@@ -101,7 +101,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  // Toggle password or confirm password visibility.
+  // Toggle password or confirm password visibility------
   togglePasswordVisibility(field: string): void {
     if (field === 'password') {
       this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
