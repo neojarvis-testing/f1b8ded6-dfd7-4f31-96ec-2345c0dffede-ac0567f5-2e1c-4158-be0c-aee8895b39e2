@@ -12,5 +12,13 @@ export class User
     MobileNumber: string;
 
     UserRole: string;
+    //comment1
+    //comment2
+    //comment3
+    //comment4
+    //comment5
+    //comment6
+    //comment7
+    //comment8
 
 }
