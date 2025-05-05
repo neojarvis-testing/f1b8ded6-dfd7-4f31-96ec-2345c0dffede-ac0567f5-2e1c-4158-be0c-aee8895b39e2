@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         console.log('OTP sent successfully', response);
         Swal.fire('Success', 'OTP sent to your email', 'success');
         this.loginError = null;
-        // Set flag to show the OTP verification form.
+        // Setting flag to show the OTP verification Form
         this.otpVerificationRequired = true;
       },
       error => {
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // Called when the OTP verification form is submitted.
+  // Called when the OTP Verification Form is Submitted.
   verifyOtp(): void {
     if (!this.user.Email) {
       this.loginError = 'Email is required for OTP verification';
@@ -70,18 +70,18 @@ export class LoginComponent implements OnInit {
       this.loginError = 'Please enter the OTP sent to your email';
       return;
     }
-    const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the API.
+    const payload = { email: this.user.Email, otp: this.userOtp }; // Keys in lower-case as expected by the api.
     this.authService.verifyLoginOtp(payload).subscribe(
       response => {
         console.log('OTP verified successfully', response);
-        Swal.fire('Success', 'Login successful', 'success');
+        Swal.fire('Success', 'Login successful', 'success');//Success
         this.loginError = null;
         this.loginSuccess = true;
         // Redirect to home (or any other desired page).
         this.router.navigate(['/home']);
       },
       error => {
-        console.error('OTP verification error', error);
+        console.error('OTP verification error', error); //Error in Console
         this.loginError = error.error?.Message || 'OTP verification failed. Please try again.';
       }
     );
