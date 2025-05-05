@@ -149,4 +149,8 @@ nav {
       color: #7E99A3;
     }
   }
+
+  ul {
+    list-style-type: none; 
+   }
   
