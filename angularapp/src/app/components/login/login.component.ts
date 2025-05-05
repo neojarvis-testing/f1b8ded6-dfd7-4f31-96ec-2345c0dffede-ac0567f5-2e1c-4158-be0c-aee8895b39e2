@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
     this.authService.verifyLoginOtp(payload).subscribe(
       response => {
         console.log('OTP verified successfully', response);
-        Swal.fire('Success', 'Login successful', 'success');
+        Swal.fire('Success', 'Login successful', 'success');//Success
         this.loginError = null;
         this.loginSuccess = true;
         // Redirect to home (or any other desired page).
