@@ -161,9 +161,9 @@ namespace dotnetapp.Services
             return (1, "User created successfully!");
         }
 
-        // -------------------------------------
+        // ------------------------------------------------
         // Login Flow with OTP and Password Check
-        // -------------------------------------
+        // --------------------------------------------------
 
         // Standard login to generate a JWT token.
         public async Task<(int, string)> Login(LoginModel model)
