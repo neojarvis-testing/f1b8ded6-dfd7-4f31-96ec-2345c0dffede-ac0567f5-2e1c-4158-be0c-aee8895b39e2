@@ -128,7 +128,7 @@ builder.Services.AddTransient<BlogPostService>();
 builder.Services.AddScoped<FeedbackService>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 
-//it registers the necessary services to generate API documentation, such as OpenAPI/Swagger documentation.
+
 builder.Services.AddEndpointsApiExplorer(); 
 
 // Register SignalR services
