@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  // Called when the OTP verification form is submitted.
+  // Called when the OTP verification form is Submitted.
   verifyOtp(): void {
     if (!this.user.Email) {
       this.loginError = 'Email is required for OTP verification';
