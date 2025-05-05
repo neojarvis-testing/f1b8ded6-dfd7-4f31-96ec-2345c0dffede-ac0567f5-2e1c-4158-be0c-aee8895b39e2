@@ -40,7 +40,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddMvc().AddJsonOptions(options =>
     options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
-// Add Authentication - JWT
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
