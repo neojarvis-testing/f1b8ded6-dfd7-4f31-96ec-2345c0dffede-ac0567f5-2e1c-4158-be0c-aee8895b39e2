@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace dotnetapp.Services  // Adjust the namespace if needed
 {
-    public class ChatHub : Hub
+    public class ChatHub : Hub //Inheriting
     {
         // This method can be invoked by connected clients to send a message.
         public async Task SendMessage(string user, string message)
