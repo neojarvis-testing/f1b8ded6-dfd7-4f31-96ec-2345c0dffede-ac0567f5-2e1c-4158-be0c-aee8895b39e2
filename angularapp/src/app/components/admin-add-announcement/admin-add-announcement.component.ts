@@ -19,7 +19,7 @@ export class AdminAddAnnouncementComponent implements OnInit {
     PublishedDate: new Date()
   };
 
-  isEditMode: boolean = false;
+  isEditMode: boolean = false; //Flag to determine edit or add mode 
   announcementId: number | null = null;
   successMessage = '';
   errorMessage = '';
@@ -81,6 +81,8 @@ export class AdminAddAnnouncementComponent implements OnInit {
 
     this.announcement.PublishedDate = new Date();
 
+    //Here update-announcment is done by determining the flag
+
     if (this.isEditMode && this.announcementId !== null) {
       this.announcementService.updateAnnouncement(this.announcementId, this.announcement).subscribe({
         next: () => {
@@ -111,3 +113,4 @@ export class AdminAddAnnouncementComponent implements OnInit {
     }
   }
 }
+
